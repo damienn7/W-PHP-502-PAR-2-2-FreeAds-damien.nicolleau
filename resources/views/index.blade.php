@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil</title>
-</head>
-<body>
-    <p>Hello world !</p>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+    <p class="h-64">Hello world !</p>
+@endsection

@@ -13,5 +13,16 @@ use App\Http\Controllers\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ->whereNumber()
+// ->name()
+Route::get('/', [IndexController::class,"showIndex"])->name('welcome');
 
-Route::get('/', [IndexController::class,"showIndex"]);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
